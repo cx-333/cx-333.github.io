@@ -7,7 +7,7 @@ url: https://cx-333.github.io
 # can not modify
 lsi: false
 safe: true
-source: cx-333
+source: cx-333.github.io
 inremental: false
 highlighter: rouge
 gist:
@@ -15,4 +15,3 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-  
