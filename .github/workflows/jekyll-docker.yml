@@ -18,6 +18,11 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+
     - uses: actions/configure-pages@v3
     - name: Configure Github Pages
+      run: echo done
+
+    - uses: actions/upload-pages-artifact@v1
+    - name: Upload Github PAges artifact
       run: echo done
