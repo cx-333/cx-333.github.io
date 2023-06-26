@@ -37,6 +37,8 @@ jobs:
     environment: github-pages
     # url: $
     steps:
+      - uses: actions/deploy-pages@v1
       - name: Deploy artifact
+        run: echo done
         id: deployment
-        uses: actions/deploy-pages@v1
+        
