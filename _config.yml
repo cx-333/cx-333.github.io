@@ -3,3 +3,16 @@ title: Xin Chen's homepage
 description: My personal profile
 
 url: https://cx-333.github.io
+
+# can not modify
+lsi: false
+safe: true
+source: cx-333
+inremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  
