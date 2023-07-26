@@ -29,6 +29,7 @@ github_username:  cx-333
 domain: cx-333.github.io
 # Build settings
 theme: minima
+markdown: kramdown
 plugins:
   - jekyll-feed
 
