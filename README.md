@@ -1,4 +1,4 @@
-# cx-333.github.io :rocket:
+# :rocket: cx-333.github.io
 Personal website.
 
 # Description
