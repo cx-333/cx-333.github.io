@@ -11,5 +11,6 @@ Learn to apply [github pages.](https://docs.github.com/en/pages/quickstart)
 # Steps for JekyII
 
 1. [create JekyII](https://docs.github.com/zh/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll)
-    - prerequirements: `git`, [`ruby`](https://www.ruby-lang.org/en/documentation/installation/)
-    - follow [`bundle`](https://bundler.io/) steps. 
+    - Prerequirements: `git`, [`ruby`](https://www.ruby-lang.org/en/documentation/installation/).
+    - Follow [`bundle`](https://bundler.io/) steps. 
+2. 
