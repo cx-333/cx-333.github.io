@@ -2,7 +2,16 @@ theme: jekyll-theme-minimal
 title: Xin Chen's homepage
 description: reference to my academic recording.
 
+# website head image
+avatar: https://cx-333.github.io/pics/20201028101019182.png
+favicon: https://cx-333.github.io/pics/github_original_wordmark_logo_icon_146506.ico
 
 #domain: cx-333.github.io
 #url: https://cx-333.github.io
 #baseurl: /cx-333/
+
+# personal social
+footer-links:
+  email: 1354123040@qq.com
+  github: cx-333
+  zhihu: none

@@ -15,3 +15,5 @@ Learn to apply [github pages.](https://docs.github.com/en/pages/quickstart)
     - Follow [`bundle`](https://bundler.io/) steps. 
 2. [Add new contents to Github Pages](https://docs.github.com/zh/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll).
 
+3. [Learning website](https://pianfan.github.io/build_own_website/).
+
