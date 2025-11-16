@@ -1,5 +1,5 @@
 # :rocket: cx-333.github.io
-[Personal website] (https://cx-333.github.io/).
+[Personal website](https://cx-333.github.io/).
 
 # Description
 
