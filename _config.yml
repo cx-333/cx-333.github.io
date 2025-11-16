@@ -12,7 +12,7 @@ favicon: https://cx-333.github.io/pics/github_original_wordmark_logo_icon_146506
 
 domain: cx-333.github.io
 url: https://cx-333.github.io
-baseurl: /cx-333
+# baseurl: 
 
 # personal social
 footer-links:
