@@ -1,4 +1,4 @@
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 title: Xin Chen's Personal Region
 description: Reference to my academic roadmap.
 
@@ -8,10 +8,10 @@ favicon: https://cx-333.github.io/pics/github_original_wordmark_logo_icon_146506
 
 domain: cx-333.github.io
 url: https://cx-333.github.io
-baseurl: /cx-333/
+baseurl: /cx-333
 
 # personal social
 footer-links:
   email: 1354123040@qq.com
-  github: none
+  github: https://cx-333.github.io
   zhihu: none
