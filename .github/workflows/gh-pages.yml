@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
   pages: write
   id-token: write
 
@@ -55,6 +56,21 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+      # Older repositories may still run the built-in branch publisher on main.
+      # Wait for it so it cannot replace the compiled React site with raw source.
+      - name: Wait for legacy Pages publishing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          for attempt in {1..120}; do
+            pending=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$GITHUB_SHA&per_page=100" \
+              --jq '[.workflow_runs[] | select(.name == "pages build and deployment" and .status != "completed")] | length')
+            if [ "$pending" = "0" ]; then exit 0; fi
+            sleep 5
+          done
+          echo "::error::Legacy Pages publishing did not finish within 10 minutes."
+          exit 1
       - name: Deploy Pages artifact
         id: deployment
         uses: actions/deploy-pages@v4

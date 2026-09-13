@@ -13,6 +13,7 @@
 安装 Node.js 22.12 或更高的 22.x 版本及 Git，在项目目录执行：
 
 ```powershell
+npm.cmd install --global npm@11.6.1
 npm.cmd ci
 npm.cmd run dev
 ```
@@ -35,6 +36,7 @@ git commit -m "更新个人主页信息"
 git push origin main
 ```
 
-`main` 保存源码；GitHub Actions 验证并构建后将 `dist/` 发布到 `gh-pages`。Pages 发布源为 **Deploy from a branch → gh-pages → / (root)**。发布分支只保留最新构建，旧文件自动清理。日常修改无需强制推送，不要直接修改 `gh-pages` 或 `dist/`。
+`main` 保存源码；GitHub Actions 验证并构建后，将 `dist/` 同步到 `gh-pages`，再通过官方 Pages Action 发布构建产物。流程兼容仓库原有的分支发布设置，会等待旧发布任务结束后再发布，防止源码页面覆盖构建产物。发布分支只保留最新构建，旧文件自动清理。日常修改无需强制推送，不要直接修改 `gh-pages` 或 `dist/`。
 
 部署配置：`.github/workflows/gh-pages.yml`。首次迁移以本项目覆盖旧站，原 Hugo 网站历史不合并到新站分支。
+
