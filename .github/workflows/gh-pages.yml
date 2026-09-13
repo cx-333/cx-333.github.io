@@ -28,8 +28,17 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Match local npm version
+        run: npm install --global npm@11.6.1
       - name: Install dependencies
-        run: npm ci
+        shell: bash
+        run: |
+          npm ci > /tmp/npm-ci.log 2>&1 || {
+            cat /tmp/npm-ci.log
+            while IFS= read -r line; do echo "::error::$line"; done < <(tail -n 35 /tmp/npm-ci.log)
+            exit 1
+          }
+          cat /tmp/npm-ci.log
       - name: Lint
         run: npm run lint
       - name: Build
