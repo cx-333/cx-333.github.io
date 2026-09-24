@@ -2,147 +2,153 @@ import { useMemo, useState } from "react";
 import "./App.css";
 
 const resumeData = {
-  name: "你的姓名",
-  title: "计算机科学与技术博士生",
-  location: "城市 / 学校",
-  email: "your.email@university.edu",
-  github: "https://gitee.com/yourname",
+  name: "Xin Chen",
+  title: "PhD Student in Computer Science and Technology",
+  location: "Xi'an / Xidian University",
+  email: "1354123040@qq.com",
+  github: "https://github.com/cx-333",
   scholar: "#",
   cv: "#",
   summary:
-    "我是一名计算机科学与技术专业在读博士生，研究兴趣包括人工智能、机器学习系统、数据挖掘与智能计算。我关注从算法建模到系统实现的完整研究链路，重视可复现、可解释与可扩展的科研实践。",
+    "I am a PhD student in Computer Science and Technology with research interests in artificial intelligence, machine learning systems, data mining, and intelligent computing. My work spans algorithm design and system implementation, with an emphasis on reproducibility, interpretability, and scalability.",
   interests: [
-    "人工智能",
-    "机器学习",
-    "大模型与智能体",
-    "图学习",
-    "数据挖掘",
-    "高性能计算",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Large Models and Agents",
+    "Image and Video Coding",
+    "Intelligent Semantic Communication",
+    "High-Performance Computing",
   ],
   metrics: [
-    { label: "论文 / 投稿", value: "8+" },
-    { label: "科研项目", value: "5" },
-    { label: "代码仓库", value: "12" },
-    { label: "合作经历", value: "3" },
+    { label: "Papers / Submissions", value: "2+" },
+    { label: "Research Projects", value: "5" },
+    { label: "Repositories", value: "12" },
+    { label: "Collaborations", value: "3" },
   ],
   education: [
     {
-      degree: "博士 · 计算机科学与技术",
-      school: "某某大学 / 某某实验室",
-      period: "2023 - 至今",
+      degree: "PhD in Computer Science and Technology",
+      school: "Xidian University / Key Laboratory of Intelligent Perception and Image Understanding, Ministry of Education",
+      period: "2024 - Present",
       description:
-        "研究方向：人工智能、机器学习系统、数据驱动优化。导师：XXX 教授。",
+        "Research: video coding, intelligent semantic communication, artificial intelligence, machine learning systems, and data-driven optimization. Advisors: Prof. Biao Hou and Prof. Guangming Shi.",
     },
     {
-      degree: "硕士 / 本科 · 计算机相关专业",
-      school: "某某大学",
-      period: "2019 - 2023",
+      degree: "Master's Degree in a Computing-Related Discipline",
+      school: "Zhengzhou University",
+      period: "2021 - 2024",
       description:
-        "可填写 GPA、核心课程、毕业论文、竞赛经历或科研训练经历。",
+        "Add your GPA, core courses, thesis, competitions, or research training here.",
     },
   ],
   skills: [
     {
-      group: "研究能力",
-      items: ["问题建模", "实验设计", "论文写作", "学术报告", "可复现实验"],
+      group: "Research Skills",
+      items: ["Problem Formulation", "Experimental Design", "Academic Writing", "Research Presentations", "Reproducible Experiments"],
     },
     {
-      group: "编程语言",
-      items: ["Python", "C/C++", "JavaScript", "SQL", "Shell"],
+      group: "Programming Languages",
+      items: ["Python", "C/C++", "Shell", "Matlab"],
     },
     {
-      group: "机器学习",
-      items: ["PyTorch", "Scikit-learn", "Transformers", "Graph ML"],
+      group: "Machine Learning",
+      items: ["PyTorch/Tensorflow", "Scikit-learn", "Transformers"],
     },
     {
-      group: "系统工具",
-      items: ["Linux", "Git", "Docker", "LaTeX", "Slurm"],
+      group: "Systems and Tools",
+      items: ["Linux", "Git", "Docker", "LaTeX"],
     },
   ],
   publications: [
     {
+      cover: "/papers/rrsq-dvsc/cover.webp",
       title:
-        "A Data-Centric Framework for Robust and Efficient Machine Learning Systems",
-      venue: "NeurIPS / ICML / AAAI / CCF-A Conference",
+        "Semantic Space Reorganization for Robust Digital Video Semantic Communication",
+      venue: "IEEE Transactions on Wireless Communications (TWC)",
       year: "2026",
       status: "Under Review",
-      tags: ["Machine Learning", "AI Systems"],
+      tags: ["Semantic Communication", "Video Coding", "Robust"],
       description:
-        "围绕高效、鲁棒的机器学习系统提出数据中心化框架，支持模型训练、评估与部署优化。",
-      link: "#",
+        "Improves robustness in digital video semantic communication through semantic-aware clustering and codebook index reordering, with cross-window attention in SGR to enhance temporal semantic consistency.",
+      link: "/papers/rrsq-dvsc/",
+      code: "https://github.com/cx-333/rrsq_dvsc",
     },
     {
-      title: "Graph-based Representation Learning for Scientific Data Mining",
-      venue: "KDD / WWW / TKDE",
-      year: "2025",
-      status: "Published",
-      tags: ["Graph Learning", "Data Mining"],
+      cover: "/papers/fppa/cover.webp",
+      title: "Fidelity-Preserving Perceptual Image Compression via a Rate-Aware Mixture of LoRA Experts",
+      venue: "ICASSP 2027",
+      year: "2027",
+      status: "Under Review",
+      tags: ["Image Compression", "Perceptual Coding", "LoRA", "Mixture of Experts"],
       description:
-        "面向科学数据挖掘任务，构建图表示学习方法并验证其在多类预测任务中的有效性。",
-      link: "#",
+        "Freezes a pretrained codec and introduces a rate-aware mixture of LoRA experts for perceptual adaptation. The same bitstream supports fidelity and perception modes; bypassing the adapters restores the original decoder.",
+      link: "/papers/fppa/",
+      code: "https://github.com/cx-333/fppa",
     },
     {
+      cover: "",
       title: "Efficient Training Pipeline for Large-scale AI Workloads",
       venue: "MLSys / SC / TPDS",
       year: "2024",
       status: "Preprint",
       tags: ["HPC", "AI Systems"],
       description:
-        "设计大规模 AI 工作负载训练流程，提升实验管理、资源调度与训练效率。",
+        "Designs training pipelines for large-scale AI workloads to improve experiment management, resource scheduling, and training efficiency.",
       link: "#",
+      code: "",
     },
   ],
   projects: [
     {
-      name: "可复现实验管理平台",
-      period: "2025 - 至今",
+      name: "Reproducible Experiment Management Platform",
+      period: "2025 - Present",
       tags: ["Python", "Dashboard", "Research Tool"],
       description:
-        "面向科研实验的配置管理、指标记录、结果对比与复现实验平台。",
-      impact: "降低实验追踪成本，提升团队协作效率。",
+        "A platform for managing experiment configurations, tracking metrics, comparing results, and reproducing research experiments.",
+      impact: "Reduces experiment tracking overhead and improves team collaboration.",
     },
     {
-      name: "面向大规模数据的图学习框架",
+      name: "Graph Learning Framework for Large-Scale Data",
       period: "2024 - 2025",
       tags: ["Graph ML", "PyTorch", "Scalability"],
       description:
-        "构建可扩展的数据处理与图学习流程，用于节点分类、链接预测与异常检测。",
-      impact: "支持百万级节点规模实验。",
+        "Builds scalable data processing and graph learning pipelines for node classification, link prediction, and anomaly detection.",
+      impact: "Supports experiments with millions of nodes.",
     },
     {
-      name: "智能文献分析助手",
+      name: "Intelligent Literature Analysis Assistant",
       period: "2024",
       tags: ["LLM", "NLP", "Visualization"],
       description:
-        "结合语义检索、信息抽取与可视化分析，辅助研究者梳理相关工作。",
-      impact: "提升文献调研效率。",
+        "Combines semantic search, information extraction, and visual analysis to help researchers explore related work.",
+      impact: "Improves the efficiency of literature reviews.",
     },
   ],
   experiences: [
     {
-      role: "博士研究生 / 研究助理",
-      org: "某某大学 某某实验室",
-      period: "2023 - 至今",
+      role: "PhD Student / Assistant Researcher",
+      org: "Pengcheng Laboratory, Shenzhen",
+      period: "2024 - Present",
       items: [
-        "围绕 XXX 问题开展算法建模、实验验证与论文撰写。",
-        "搭建可复现实验流程，支持数据处理、模型训练、评估与可视化。",
-        "参与课题组科研项目，推进论文投稿与系统原型实现。",
+        "Develops algorithms, conducts experiments, and writes papers on robust video transmission at extremely low bitrates.",
+        "Builds reproducible workflows for data processing, model training, evaluation, and visualization.",
+        "Contributes to research projects, paper submissions, and system prototypes.",
       ],
     },
     {
-      role: "算法实习生 / 研发实习生",
-      org: "某科技公司 / 研究院",
-      period: "2025 夏季",
+      role: "Algorithm / R&D Intern",
+      org: "Technology Company / Research Institute",
+      period: "Summer 2025",
       items: [
-        "参与真实业务场景中的模型优化与系统部署。",
-        "将研究原型改造为稳定工程模块，提升模型推理效率或指标表现。",
+        "Contributes to model optimization and system deployment for real-world applications.",
+        "Turns research prototypes into reliable software modules to improve inference efficiency or model performance.",
       ],
     },
   ],
   awards: [
-    "国家奖学金 / 学业一等奖学金 / 优秀研究生",
-    "校级优秀论文 / 优秀毕业生 / 科研竞赛奖项",
-    "会议学生旅行奖 / 开源贡献奖 / 学术报告奖",
+    "National Scholarship / First-Class Academic Scholarship / Outstanding Graduate Student",
+    "University Outstanding Thesis / Outstanding Graduate / Research Competition Awards",
+    "Student Travel Grant / Open Source Contribution Award / Research Presentation Award",
   ],
 };
 
@@ -166,18 +172,18 @@ function Section({ id, label, title, children }) {
 
 export default function App() {
   const [dark, setDark] = useState(false);
-  const [activeTab, setActiveTab] = useState("论文");
+  const [activeTab, setActiveTab] = useState("Publications");
   const [keyword, setKeyword] = useState("");
-  const [activeTag, setActiveTag] = useState("全部");
+  const [activeTag, setActiveTag] = useState("All");
 
   const publicationTags = useMemo(() => {
     const tags = resumeData.publications.flatMap((item) => item.tags);
-    return ["全部", ...new Set(tags)];
+    return ["All", ...new Set(tags)];
   }, []);
 
   const filteredPublications = useMemo(() => {
     return resumeData.publications.filter((item) => {
-      const matchTag = activeTag === "全部" || item.tags.includes(activeTag);
+      const matchTag = activeTag === "All" || item.tags.includes(activeTag);
       const q = keyword.trim().toLowerCase();
       const matchKeyword =
         !q ||
@@ -209,15 +215,15 @@ export default function App() {
         </a>
 
         <nav>
-          <a href="#about">简介</a>
-          <a href="#research">研究</a>
-          <a href="#works">成果</a>
-          <a href="#experience">经历</a>
-          <a href="#contact">联系</a>
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#works">Works</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <button className="theme-btn" onClick={() => setDark(!dark)}>
-          {dark ? "浅色" : "深色"}
+          {dark ? "Light" : "Dark"}
         </button>
       </header>
 
@@ -233,10 +239,10 @@ export default function App() {
 
             <div className="hero-actions">
               <a className="primary-btn" href={`mailto:${resumeData.email}`}>
-                联系我
+                Contact Me
               </a>
               <a className="secondary-btn" href={resumeData.cv}>
-                下载 CV
+                Download CV
               </a>
             </div>
 
@@ -263,7 +269,7 @@ export default function App() {
             </div>
 
             <div className="interest-box">
-              <h4>研究兴趣</h4>
+              <h4>Research Interests</h4>
               <div className="tags">
                 {resumeData.interests.map((item) => (
                   <span key={item}>{item}</span>
@@ -273,7 +279,7 @@ export default function App() {
           </aside>
         </section>
 
-        <Section id="about" label="About" title="教育背景与个人定位">
+        <Section id="about" label="About" title="Education and Background">
           <div className="grid two">
             {resumeData.education.map((item) => (
               <article className="card" key={item.degree}>
@@ -286,7 +292,7 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="research" label="Research" title="技能栈与研究能力">
+        <Section id="research" label="Research" title="Technical and Research Skills">
           <div className="grid four">
             {resumeData.skills.map((skill) => (
               <article className="card compact" key={skill.group}>
@@ -301,10 +307,10 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="works" label="Works" title="论文、项目与成果展示">
+        <Section id="works" label="Works" title="Publications, Projects, and Awards">
           <div className="toolbar">
             <div className="tabs">
-              {["论文", "项目", "荣誉"].map((tab) => (
+              {["Publications", "Projects", "Awards"].map((tab) => (
                 <Tag
                   key={tab}
                   active={activeTab === tab}
@@ -315,17 +321,17 @@ export default function App() {
               ))}
             </div>
 
-            {activeTab === "论文" && (
+            {activeTab === "Publications" && (
               <input
                 className="search"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
-                placeholder="搜索论文、会议、年份、关键词..."
+                placeholder="Search papers, venues, years, keywords..."
               />
             )}
           </div>
 
-          {activeTab === "论文" && (
+          {activeTab === "Publications" && (
             <>
               <div className="filter-row">
                 {publicationTags.map((tag) => (
@@ -342,7 +348,20 @@ export default function App() {
               <div className="list">
                 {filteredPublications.map((paper) => (
                   <article className="paper-card" key={paper.title}>
-                    <div>
+                    <div className="paper-cover">
+                      {paper.cover?.trim() ? (
+                        <a href={paper.link} aria-label={`View ${paper.title}`}>
+                          <img
+                            src={paper.cover}
+                            alt={`${paper.title} cover`}
+                            loading="lazy"
+                          />
+                        </a>
+                      ) : (
+                        <span className="paper-cover-placeholder">Paper cover</span>
+                      )}
+                    </div>
+                    <div className="paper-content">
                       <div className="paper-meta">
                         <span>{paper.status}</span>
                         <span>{paper.year}</span>
@@ -356,16 +375,29 @@ export default function App() {
                         ))}
                       </div>
                     </div>
-                    <a className="paper-link" href={paper.link}>
-                      查看
-                    </a>
+                    <div className="paper-actions">
+                      <a className="paper-link" href={paper.link}>
+                        View
+                      </a>
+                      {paper.code?.trim() && (
+                        <a
+                          className="paper-link paper-code"
+                          href={paper.code}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View code for ${paper.title}`}
+                        >
+                          Code
+                        </a>
+                      )}
+                    </div>
                   </article>
                 ))}
               </div>
             </>
           )}
 
-          {activeTab === "项目" && (
+          {activeTab === "Projects" && (
             <div className="grid three">
               {resumeData.projects.map((project) => (
                 <article className="card project-card" key={project.name}>
@@ -383,7 +415,7 @@ export default function App() {
             </div>
           )}
 
-          {activeTab === "荣誉" && (
+          {activeTab === "Awards" && (
             <div className="grid three">
               {resumeData.awards.map((award) => (
                 <article className="card compact" key={award}>
@@ -395,7 +427,7 @@ export default function App() {
           )}
         </Section>
 
-        <Section id="experience" label="Experience" title="科研与工程经历">
+        <Section id="experience" label="Experience" title="Research and Engineering Experience">
           <div className="timeline">
             {resumeData.experiences.map((exp) => (
               <article className="timeline-item" key={exp.role}>
@@ -412,12 +444,12 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="contact" label="Contact" title="开放合作与联系">
+        <Section id="contact" label="Contact" title="Collaboration and Contact">
           <div className="contact-card">
             <div>
-              <h3>欢迎交流科研合作、实习机会与开源项目</h3>
+              <h3>Let's discuss research, internships, and open source projects</h3>
               <p>
-                你可以把这里改成更具体的合作意向，例如联合论文、工业界研究实习、开源项目或学术访问。
+                Add specific collaboration interests here, such as joint papers, industry research internships, open source projects, or academic visits.
               </p>
             </div>
             <a href={`mailto:${resumeData.email}`}>{resumeData.email}</a>

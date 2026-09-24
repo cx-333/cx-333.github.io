@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "name": "Tableware and Text",
+    "original": "/papers/fppa/sample-1-original.webp",
+    "fidelity": "/papers/fppa/sample-1-fidelity.webp",
+    "fidelityMetrics": {
+      "qp": 15.0,
+      "bpp": 0.0197,
+      "psnr": 33.9503,
+      "ssim": 0.9127,
+      "lpips": 0.3141
+    },
+    "perception": "/papers/fppa/sample-1-perception.webp",
+    "perceptionMetrics": {
+      "qp": 15.0,
+      "bpp": 0.0197,
+      "psnr": 32.9095,
+      "ssim": 0.8683,
+      "lpips": 0.1821
+    }
+  },
+  {
+    "id": "2",
+    "name": "Street and Bridge",
+    "original": "/papers/fppa/sample-2-original.webp",
+    "fidelity": "/papers/fppa/sample-2-fidelity.webp",
+    "fidelityMetrics": {
+      "qp": 15.0,
+      "bpp": 0.1032,
+      "psnr": 28.5044,
+      "ssim": 0.8647,
+      "lpips": 0.2095
+    },
+    "perception": "/papers/fppa/sample-2-perception.webp",
+    "perceptionMetrics": {
+      "qp": 15.0,
+      "bpp": 0.1032,
+      "psnr": 27.714,
+      "ssim": 0.8319,
+      "lpips": 0.1056
+    }
+  },
+  {
+    "id": "3",
+    "name": "Food and Texture",
+    "original": "/papers/fppa/sample-3-original.webp",
+    "fidelity": "/papers/fppa/sample-3-fidelity.webp",
+    "fidelityMetrics": {
+      "qp": 15.0,
+      "bpp": 0.0365,
+      "psnr": 30.9846,
+      "ssim": 0.8122,
+      "lpips": 0.3988
+    },
+    "perception": "/papers/fppa/sample-3-perception.webp",
+    "perceptionMetrics": {
+      "qp": 15.0,
+      "bpp": 0.0365,
+      "psnr": 29.8476,
+      "ssim": 0.7498,
+      "lpips": 0.1921
+    }
+  }
+]
